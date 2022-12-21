@@ -1,0 +1,22 @@
+<%- include("header") %>
+
+<h1>Home</h1>
+<p>
+    <%= homeStartingContent %>
+</p>
+
+
+<!-- <% for(var i=0 ; i< newPost.length ; i++){ %>
+    <h1><%= newPost[i].Title %></h1>
+    <p><%= newPost[i].Body %></p>
+<% } %> -->
+
+<% newPost.forEach(function(elements){ %>
+   
+    <h1><%= elements.Title %></h1>
+    <p><%= elements.Body.split(" ").slice(0,15).join(" ") %> ...........................
+        <a href="/post/<%= elements.Title %>" >Read More</a> 
+    </p>
+<% }) %>
+
+<%- include("footer") %>
